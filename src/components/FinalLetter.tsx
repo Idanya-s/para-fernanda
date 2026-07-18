@@ -77,7 +77,7 @@ export default function FinalLetter({ onCompleted }: FinalLetterProps) {
       initial={{ opacity: 0, scale: 0.95, y: 30 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 1.2, ease: 'easeOut' }}
-      className="relative w-full max-w-2xl mx-auto bg-stone-50/95 border-2 border-gold-custom/40 rounded-xl p-6 sm:p-12 shadow-[0_15px_60px_rgba(114,47,55,0.15)] text-stone-800 font-serif overflow-hidden z-40 max-h-[85vh] flex flex-col"
+      className="relative w-full max-w-2xl mx-auto bg-stone-50/95 border-2 border-gold-custom/40 rounded-xl p-4 sm:p-12 shadow-[0_15px_60px_rgba(114,47,55,0.15)] text-stone-800 font-serif overflow-hidden z-40 max-h-[90vh] sm:max-h-[85vh] flex flex-col"
       id="final-letter-card"
     >
       {/* Decorative Gold Filigree Borders */}

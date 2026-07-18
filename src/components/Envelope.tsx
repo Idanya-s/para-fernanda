@@ -36,7 +36,7 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
 
   return (
     <div 
-      className="relative w-64 h-44 sm:w-72 sm:h-48 flex items-center justify-center m-4"
+      className="relative w-44 h-32 sm:w-72 sm:h-48 flex items-center justify-center m-1 sm:m-4"
       id={`envelope-container-${letter.id}`}
     >
       {/* Interactive Envelope Body */}

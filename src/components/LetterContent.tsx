@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { PenTool, X } from 'lucide-react';
+import { PenTool } from 'lucide-react';
 import { Letter } from '../types';
 
 interface LetterContentProps {
@@ -24,8 +24,8 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
   const penRef = useRef<HTMLDivElement | null>(null);
 
   // Speed parameters (ms per character)
-  const CHAR_SPEED = 18;
-  const REFLECTION_SPEED = 10; // faster for longer prose
+  const CHAR_SPEED = 32;
+  const REFLECTION_SPEED = 20; // faster for longer prose
 
   // Typewriter helper
   const typeText = (
@@ -61,7 +61,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
         CHAR_SPEED * 1.5,
         (text) => setDisplayText(prev => ({ ...prev, title: text })),
         () => {
-          setTimeout(() => setPhase('writing-quote'), 400);
+          setTimeout(() => setPhase('writing-quote'), 700);
         }
       );
     } else if (phase === 'writing-quote') {
@@ -70,7 +70,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
         CHAR_SPEED,
         (text) => setDisplayText(prev => ({ ...prev, quote: text })),
         () => {
-          setTimeout(() => setPhase('writing-poem'), 500);
+          setTimeout(() => setPhase('writing-poem'), 800);
         }
       );
     } else if (phase === 'writing-poem') {
@@ -89,7 +89,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
           () => {
             setTimeout(() => {
               setCurrentLineIdx(prev => prev + 1);
-            }, 300);
+            }, 500);
           }
         );
       } else {
@@ -101,7 +101,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
         REFLECTION_SPEED,
         (text) => setDisplayText(prev => ({ ...prev, reflection: text })),
         () => {
-          setTimeout(() => setPhase('writing-dedication'), 500);
+          setTimeout(() => setPhase('writing-dedication'), 700);
         }
       );
     } else if (phase === 'writing-dedication') {
@@ -146,7 +146,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95, y: 40 }}
       transition={{ type: 'spring', stiffness: 100, damping: 18 }}
-      className={`relative w-full max-w-2xl mx-auto ${letter.paperBg} rounded-lg p-6 sm:p-10 shadow-2xl border ${letter.textColor} select-text overflow-hidden z-40 max-h-[85vh] flex flex-col`}
+      className={`relative w-full max-w-2xl mx-auto ${letter.paperBg} rounded-lg p-4 sm:p-10 shadow-2xl border ${letter.textColor} select-text overflow-hidden z-40 max-h-[90vh] sm:max-h-[85vh] flex flex-col`}
       id={`letter-content-${letter.id}`}
     >
       {/* Torn Edge Effect Overlays */}
@@ -180,15 +180,6 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
           <span className="text-[8px] font-mono tracking-widest text-stone-500 uppercase">Escribiendo...</span>
         </div>
       )}
-
-      {/* Close Button */}
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-4 text-stone-400 hover:text-stone-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-stone-500/10 transition-colors z-50"
-        title="Cerrar carta y esparcir pétalos"
-      >
-        <X size={18} />
-      </button>
 
       {/* Parchment Scrolling Text Area */}
       <div 

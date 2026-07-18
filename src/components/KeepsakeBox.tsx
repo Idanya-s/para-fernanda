@@ -11,7 +11,7 @@ export default function KeepsakeBox({ isOpen, onOpen }: KeepsakeBoxProps) {
     <div className="flex flex-col items-center justify-center select-none" id="keepsake-box-container">
       {/* 3D Perspective Wrapper */}
       <div 
-        className="relative w-80 h-56 sm:w-96 sm:h-64 cursor-pointer"
+        className="relative w-72 h-48 sm:w-96 sm:h-64 cursor-pointer"
         style={{ perspective: '1200px' }}
         onClick={!isOpen ? onOpen : undefined}
       >
@@ -68,7 +68,7 @@ export default function KeepsakeBox({ isOpen, onOpen }: KeepsakeBoxProps) {
               style={{ transform: 'rotateX(180deg)' }}
             >
               <div className="absolute inset-2 bg-rose-950/40 border border-wine-custom/30 rounded shadow-inner flex items-center justify-center">
-                <span className="font-serif text-xs text-gold-custom/40 italic">Feliz cumpleaños, mi amor lejano</span>
+                <span className="font-serif text-xs text-gold-custom/40 italic">Feliz cumpleaños, Fer</span>
               </div>
             </div>
           </motion.div>
