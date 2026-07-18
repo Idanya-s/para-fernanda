@@ -188,7 +188,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
       >
         {/* Title */}
         <div className="text-center pt-4">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-wide italic font-cursive text-stone-900 border-b border-stone-850/10 pb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-wide italic font-serif text-stone-900 border-b border-stone-850/10 pb-2">
             {displayText.title}
           </h2>
           <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-stone-500 mt-2">
@@ -211,7 +211,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
         {displayText.poemLines.length > 0 && (
           <div className="space-y-2 sm:space-y-3 text-center py-4 bg-stone-900/5 rounded-lg py-6 my-4 border border-stone-950/5">
             {displayText.poemLines.map((line, i) => (
-              <p key={i} className="text-base sm:text-lg italic font-medium leading-relaxed font-cursive text-stone-850 min-h-[1.5rem]">
+              <p key={i} className="text-base sm:text-lg italic font-medium leading-relaxed font-serif text-stone-850 min-h-[1.5rem]">
                 {line}
               </p>
             ))}
@@ -240,7 +240,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
               <span className="text-[9px] uppercase tracking-widest text-wine-custom font-mono font-bold block mb-2">
                 🌟 Dedicatoria Especial
               </span>
-              <p className="text-stone-900 font-cursive text-sm sm:text-base leading-relaxed italic">
+              <p className="text-stone-900 font-serif text-sm sm:text-base leading-relaxed italic">
                 "{displayText.dedication}"
               </p>
             </div>

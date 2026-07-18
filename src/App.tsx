@@ -270,7 +270,7 @@ export default function App() {
             >
               <Heart size={36} className="text-wine-custom animate-pulse fill-wine-custom/20" />
               
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gold-custom/90 tracking-widest font-cursive italic">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gold-custom/90 tracking-widest italic">
                 Gracias por existir, Fernanda.
               </h2>
               <p className="text-lg sm:text-xl font-serif text-gold-custom/70 tracking-wider font-light mt-1">

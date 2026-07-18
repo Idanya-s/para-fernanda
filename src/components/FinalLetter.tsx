@@ -100,7 +100,7 @@ export default function FinalLetter({ onCompleted }: FinalLetterProps) {
       {/* Title */}
       <div className="text-center pt-2 pb-6 border-b border-stone-200">
         <span className="text-wine-custom flex justify-center mb-1 animate-pulse"><Heart size={16} fill="currentColor" /></span>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-wide italic text-stone-900 font-cursive">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-wide italic text-stone-900 font-serif">
           {finalLetterContent.title}
         </h2>
         <div className="w-16 h-[1px] bg-gold-custom/40 mx-auto mt-2" />
@@ -126,7 +126,7 @@ export default function FinalLetter({ onCompleted }: FinalLetterProps) {
             className="pt-8 text-right pr-6"
           >
             <p className="italic text-stone-600 text-xs sm:text-sm">{finalLetterContent.signature}</p>
-             <p className="text-stone-900 font-bold text-lg sm:text-xl font-cursive mt-2 pr-2">
+             <p className="text-stone-900 font-bold text-lg sm:text-xl font-serif mt-2 pr-2">
               Alguien que está aprendiendo a quererte
             </p>
           </motion.div>
