@@ -52,6 +52,13 @@
   font-family: var(--font-cursive);
 }
 
+/* Prevent envelope rotation on mobile to avoid overlap */
+@media (max-width: 639px) {
+  .no-rotate-mobile {
+    transform: rotate(0deg) !important;
+  }
+}
+
 /* Wood color variable fallback */
 .bg-stone-850 {
   background-color: #1a120b;

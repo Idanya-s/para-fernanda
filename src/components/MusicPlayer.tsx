@@ -213,7 +213,7 @@ export default function MusicPlayer({ isPlaying, onToggle, playWindOnly = false 
   }, [isPlaying, playWindOnly]);
 
   return (
-    <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
+    <div className="fixed top-20 sm:top-6 right-4 sm:right-6 z-50 flex items-center gap-3">
       {isPlaying && !playWindOnly && (
         <div className="flex items-end gap-0.5 h-4 px-1" id="music-visualizer">
           <div className="w-[2px] bg-gold-custom/80 animate-[pulse_0.7s_infinite_alternate]" style={{ height: '30%' }} />

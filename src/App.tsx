@@ -181,7 +181,7 @@ export default function App() {
             </div>
 
             {/* Envelopes Bento Scatter Layout */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-5xl justify-items-center items-center gap-1 sm:gap-2 select-none">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-full sm:max-w-5xl justify-items-center items-center gap-0.5 sm:gap-2 select-none">
               {lettersData.map((letter, idx) => {
                 // Procedural scatter rotation angles to look natural
                 const scatterAngles = [-5, 3, -1, 4, -3, 2, -2];

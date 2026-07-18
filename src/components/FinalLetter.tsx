@@ -91,9 +91,9 @@ export default function FinalLetter({ onCompleted }: FinalLetterProps) {
 
       {/* Gentle Floating Feather Pen simulation indicator */}
       {!isDone && (
-        <div className="absolute top-8 right-8 flex items-center gap-1.5 opacity-60">
+        <div className="absolute top-6 right-6 sm:top-8 sm:right-8 flex items-center gap-1.5 opacity-60">
           <div className="w-2 h-2 rounded-full bg-wine-custom animate-ping" />
-          <span className="text-[9px] font-mono tracking-widest text-stone-500 uppercase">Escribiendo con alma...</span>
+          <span className="text-[8px] sm:text-[9px] font-mono tracking-widest text-stone-500 uppercase">Escribiendo...</span>
         </div>
       )}
 

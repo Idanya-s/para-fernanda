@@ -36,7 +36,7 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
 
   return (
     <div 
-      className="relative w-44 h-32 sm:w-72 sm:h-48 flex items-center justify-center m-1 sm:m-4"
+      className="relative w-36 h-24 sm:w-72 sm:h-48 flex items-center justify-center m-1 sm:m-4"
       id={`envelope-container-${letter.id}`}
     >
       {/* Interactive Envelope Body */}
@@ -45,7 +45,7 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={!isOpened ? onOpen : undefined}
-        className={`relative w-full h-full rounded-lg bg-gradient-to-br ${letter.envelopeBg} border p-4 shadow-xl cursor-pointer select-none overflow-hidden flex flex-col justify-between`}
+        className={`relative w-full h-full rounded-lg bg-gradient-to-br ${letter.envelopeBg} border p-2 sm:p-4 shadow-xl cursor-pointer select-none overflow-hidden flex flex-col justify-between`}
         style={{
           transformStyle: 'preserve-3d',
           transform: `perspective(1000px) rotateY(${tilt.x}deg) rotateX(${tilt.y}deg)`,
@@ -68,28 +68,35 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
         )}
 
         {/* Top/Header Info inside the Envelope */}
-        <div className="relative z-10 flex flex-col gap-1">
-          <div className="text-[10px] uppercase tracking-widest opacity-60 font-mono">
+        <div className="relative z-10 flex flex-col gap-0 sm:gap-1">
+          <div className="hidden sm:block text-[10px] uppercase tracking-widest opacity-60 font-mono truncate">
             {letter.styleName}
           </div>
-          <div className="text-sm font-serif font-medium tracking-wide">
+          <div className="hidden sm:block text-sm font-serif font-medium tracking-wide">
             Inspirado en
           </div>
-          <div className="text-base font-serif font-bold tracking-wider text-gold-custom">
+          <div className="text-xs sm:text-base font-serif font-bold tracking-wider text-gold-custom truncate">
             {letter.author}
           </div>
         </div>
 
         {/* Read State Indicator */}
         {isRead && !isOpened && (
-          <div className="absolute top-4 right-4 text-[9px] font-mono border border-gold-custom/30 text-gold-custom/80 px-1.5 py-0.5 rounded uppercase tracking-wider bg-black/40">
+          <div className="hidden sm:block absolute top-4 right-4 text-[9px] font-mono border border-gold-custom/30 text-gold-custom/80 px-1.5 py-0.5 rounded uppercase tracking-wider bg-black/40">
             Leído
           </div>
         )}
 
         {/* Centered Wax Seal (Visual Climax of Envelope) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-20">
-          <div className="relative w-14 h-14 flex items-center justify-center">
+          {/* Mobile: simple small seal */}
+          <div className="sm:hidden w-6 h-6 rounded-full flex items-center justify-center"
+            style={{ background: `radial-gradient(circle, ${letter.sealColor} 60%, rgba(0,0,0,0.3) 100%)` }}>
+            <span className="text-xs select-none">{letter.sealSymbol}</span>
+          </div>
+          
+          {/* Desktop: animated cracked wax seal */}
+          <div className="hidden sm:flex relative w-14 h-14 items-center justify-center">
             
             {/* Crackable Wax Seal halves */}
             <motion.div
@@ -106,7 +113,6 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
               }}
               transition={{ duration: 0.8, ease: 'easeInOut' }}
             >
-              {/* Inner seal circle part */}
               <div 
                 className="w-10 h-10 rounded-full border border-dashed border-white/20 flex items-center justify-center shrink-0"
                 style={{
@@ -132,7 +138,6 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
               }}
               transition={{ duration: 0.8, ease: 'easeInOut' }}
             >
-              {/* Inner seal circle part */}
               <div 
                 className="w-10 h-10 rounded-full border border-dashed border-white/20 flex items-center justify-center shrink-0"
                 style={{
@@ -144,7 +149,7 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
               </div>
             </motion.div>
 
-            {/* Glowing Wax Reflection on Hover */}
+            {/* Glowing Wax Reflection */}
             {!isOpened && (
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/5 to-white/15 pointer-events-none mix-blend-overlay hover:scale-110 transition-transform duration-300" />
             )}
@@ -152,13 +157,13 @@ export default function Envelope({ letter, isOpened, isRead, onOpen }: EnvelopeP
         </div>
 
         {/* Bottom Sender Seal Text */}
-        <div className="relative z-10 flex justify-between items-center text-[10px] font-serif tracking-[0.1em] opacity-40">
+        <div className="relative z-10 hidden sm:flex justify-between items-center text-[10px] font-serif tracking-[0.1em] opacity-40">
           <span>{letter.id.toUpperCase()}-SEAL-Nº {184 + letter.id.charCodeAt(0)}</span>
           <span>100% CERA</span>
         </div>
 
         {/* Vintage Postmark Stamp Effect */}
-        <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full border border-current opacity-[0.08] flex items-center justify-center text-[7px] font-mono uppercase rotate-12 pointer-events-none select-none">
+        <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full border border-current opacity-[0.08] hidden sm:flex items-center justify-center text-[7px] font-mono uppercase rotate-12 pointer-events-none select-none">
           <div className="text-center">
             <span>PARIS</span>
             <br />
