@@ -62,10 +62,7 @@ export default function App() {
 
   const handleFinalLetterCompleted = () => {
     setFinalCompleted(true);
-    // After typing complete, wait 6 seconds then fade out to pure black ending screen
-    setTimeout(() => {
-      setStage('ended');
-    }, 6000);
+    setStage('ended');
   };
 
   return (

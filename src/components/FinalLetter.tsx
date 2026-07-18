@@ -26,8 +26,7 @@ export default function FinalLetter({ onCompleted }: FinalLetterProps) {
       setTimeout(() => {
         setIsDone(true);
         setButtonVisible(true);
-        // Trigger completion callback to start fireworks, petals and swell music!
-        onCompleted();
+        // Letter stays open — user clicks button to continue
       }, 1500);
       return;
     }
@@ -43,7 +42,7 @@ export default function FinalLetter({ onCompleted }: FinalLetterProps) {
     }
 
     // Type character by character
-    const delay = currentText.length > 80 ? 15 : 22; // speed up slightly for longer lines
+    const delay = currentText.length > 80 ? 28 : 35; // speed up slightly for longer lines
     const timer = setTimeout(() => {
       setTypedLines(prev => {
         const nextLines = [...prev];
