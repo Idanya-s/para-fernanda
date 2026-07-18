@@ -1,0 +1,6 @@
+{
+  "name": "Caja de Recuerdos de Cumpleaños",
+  "description": "Una experiencia interactiva y poética para celebrar el cumpleaños de una persona especial a través de cartas antiguas inspiradas en grandes escritores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

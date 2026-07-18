@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-cursive: "Great Vibes", cursive;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-gold-custom: #d4af37;
+  --color-wine-custom: #722f37;
+  --color-paper-custom: #f4ecd8;
+  --color-ink-custom: #4a3f35;
+  --color-space-custom: #0a0a0a;
+}
+
+/* Custom Scrollbar styling for a book-like parchment feel */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 9px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(114, 47, 55, 0.25);
+  border-radius: 9px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(114, 47, 55, 0.45);
+}
+
+/* 3D and Perspective Helpers */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Beautiful Background Gradients */
+.bg-radial-cosmos {
+  background: radial-gradient(circle at center, #0e0a15 0%, #030107 100%);
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Font helpers */
+.font-cursive {
+  font-family: var(--font-cursive);
+}
+
+/* Wood color variable fallback */
+.bg-stone-850 {
+  background-color: #1a120b;
+}
+.border-stone-850\/10 {
+  border-color: rgba(114, 47, 55, 0.1);
+}
+.text-stone-850 {
+  color: #4a3f35;
+}
+
