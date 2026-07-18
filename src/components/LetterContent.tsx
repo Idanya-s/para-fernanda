@@ -163,7 +163,7 @@ export default function LetterContent({ letter, onClose }: LetterContentProps) {
       {phase !== 'finished' && (
         <div 
           ref={penRef}
-          className="absolute pointer-events-none z-50 flex flex-col items-center gap-1 transition-all duration-300"
+          className="hidden sm:flex absolute pointer-events-none z-50 flex-col items-center gap-1 transition-all duration-300"
           style={{
             top: '2.5rem',
             right: '2.5rem',
